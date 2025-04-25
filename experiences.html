@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experiences - EduShare</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Logo styles */
+        .logo {
+            padding: 0.5rem 0;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            transition: transform 0.3s ease;
+        }
+
+        .logo-container:hover {
+            transform: scale(1.05);
+        }
+
+        .profile-image {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--primary-color);
+        }
+
+        .logo-text {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+        .experiences-section {
+            padding: 120px 5% 4rem;
+        }
+
+        .filters {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .search-bar {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .search-bar input {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .filter-select {
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            min-width: 150px;
+        }
+
+        .experiences-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .experience-card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .experience-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .experience-image {
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .experience-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .experience-content {
+            padding: 1.5rem;
+        }
+
+        .experience-meta {
+            display: flex;
+            justify-content: space-between;
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .experience-tags {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .tag {
+            background: var(--light-gray);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html">
+                    <div class="logo-container">
+                        <img src="alizia.jpg" alt="Profile" class="profile-image">
+                        <span class="logo-text">EduShare</span>
+                    </div>
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="experiences.html" class="active">Experiences</a></li>
+                <li><a href="share.html">Share Story</a></li>
+                <li><a href="categories.html">Categories</a></li>
+                <li><a href="community.html">Community</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="experiences-section">
+            <h1>Educational Experiences</h1>
+            
+            <div class="filters">
+                <div class="search-bar">
+                    <input type="text" id="search" placeholder="Search experiences...">
+                </div>
+                <select class="filter-select" id="category-filter">
+                    <option value="">All Categories</option>
+                    <option value="school">School Life</option>
+                    <option value="teaching">Teaching Moments</option>
+                    <option value="exams">Exams & Results</option>
+                    <option value="motivation">Motivation</option>
+                    <option value="failures">Failures & Lessons</option>
+                    <option value="funny">Funny Experiences</option>
+                    <option value="career">Career Advice</option>
+                </select>
+                <select class="filter-select" id="sort-filter">
+                    <option value="latest">Latest First</option>
+                    <option value="oldest">Oldest First</option>
+                </select>
+            </div>
+
+            <div class="experiences-grid" id="experiences-grid">
+                <!-- Experiences will be loaded here -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>EduShare</h3>
+                <p>Connecting through educational experiences</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 EduShare. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Sample experiences data (in a real app, this would come from a backend)
+        let experiences = [
+            {
+                id: 1,
+                title: "My First Day Teaching",
+                author: "Sarah Johnson",
+                category: "teaching",
+                date: "2025-04-20",
+                image: "https://via.placeholder.com/400x300",
+                preview: "I'll never forget the mixture of excitement and nervousness as I stepped into my classroom for the first time...",
+                tags: ["Teaching", "First Experience", "Classroom"]
+            },
+            {
+                id: 2,
+                title: "Overcoming Math Anxiety",
+                author: "Mike Chen",
+                category: "motivation",
+                date: "2025-04-19",
+                image: "https://via.placeholder.com/400x300",
+                preview: "Mathematics was always my biggest fear until I discovered a unique way to approach problems...",
+                tags: ["Mathematics", "Motivation", "Success Story"]
+            }
+        ];
+
+        // Function to create experience card
+        function createExperienceCard(experience) {
+            return `
+                <div class="experience-card">
+                    <div class="experience-image">
+                        <img src="${experience.image}" alt="${experience.title}">
+                    </div>
+                    <div class="experience-content">
+                        <div class="experience-meta">
+                            <span>${experience.author}</span>
+                            <span>${new Date(experience.date).toLocaleDateString()}</span>
+                        </div>
+                        <h3>${experience.title}</h3>
+                        <p>${experience.preview}</p>
+                        <div class="experience-tags">
+                            ${experience.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Function to filter and display experiences
+        function updateExperiences() {
+            const searchTerm = document.getElementById('search').value.toLowerCase();
+            const categoryFilter = document.getElementById('category-filter').value;
+            const sortFilter = document.getElementById('sort-filter').value;
+
+            let filteredExperiences = experiences.filter(exp => {
+                const matchesSearch = exp.title.toLowerCase().includes(searchTerm) || 
+                                   exp.preview.toLowerCase().includes(searchTerm);
+                const matchesCategory = !categoryFilter || exp.category === categoryFilter;
+                return matchesSearch && matchesCategory;
+            });
+
+            // Sort experiences
+            filteredExperiences.sort((a, b) => {
+                if (sortFilter === 'latest') {
+                    return new Date(b.date) - new Date(a.date);
+                } else {
+                    return new Date(a.date) - new Date(b.date);
+                }
+            });
+
+            const grid = document.getElementById('experiences-grid');
+            grid.innerHTML = filteredExperiences.map(exp => createExperienceCard(exp)).join('');
+        }
+
+        // Add event listeners
+        document.getElementById('search').addEventListener('input', updateExperiences);
+        document.getElementById('category-filter').addEventListener('change', updateExperiences);
+        document.getElementById('sort-filter').addEventListener('change', updateExperiences);
+
+        // Initial load
+        updateExperiences();
+    </script>
+</body>
+</html>
